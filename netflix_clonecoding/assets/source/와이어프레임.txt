@@ -1,0 +1,13 @@
+section.login
+	img
+	h1
+	form
+		.input-field
+			input[type=email], span
+		.input-field
+			input[type=password], span	
+		.button-field
+			input[type=submit], span
+		.add-info
+			label > input[checkbox], em, span	
+			a	

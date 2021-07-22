@@ -1,0 +1,63 @@
+.container
+	header
+		.logo > img
+		.signin > button
+	section.welcome
+		.heading
+			h1
+			h5
+			p
+			.getstarted
+				input[type=email], span, button
+	section.enjoy
+		.inner
+			.desc > h2, p
+			.preview > img
+	section.download
+		.inner
+			.preview > img
+			.desc > h2, p
+	section.watch
+		.inner
+			.desc > h2, p
+			.preview > img
+	section.create
+		.inner
+			.preview > img
+			.desc > h2, p
+	section.faq
+		.faq-inner
+			h1
+			article.accordion
+				(input[type=radio], label, .faq-content)*6
+			aside
+				p
+				.getstarted
+					input[type=email], span, button
+	footer
+		.footer-inner
+			.sitemap
+				h6
+				.links
+					.items
+						a*4
+					.items
+						a*4
+					.items
+						a*4
+					.items
+						a*3
+			.copyright
+				p
+=========================================
+.modal-login
+	.login
+		i.btn-close
+		h1
+		input[type=text]
+		input[type=password]
+		input[type=button]
+		.save-info
+			label > input[type=checkbox]
+		span > a
+		p > a	
