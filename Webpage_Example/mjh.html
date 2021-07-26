@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Example</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="shortcut icon" href="assets/building-regular.svg">
+
+  <style>
+  @font-face {
+  font-family: 'NEXON Lv1 Gothic OTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+body{
+  font-family : 'NEXON Lv1 Gothic OTF';
+  margin: 30px 30px;
+  line-height: 1.5em;
+  justify-content: center;
+  align-items: center;   /*세로 가운데 정렬*/
+  background-color: rgba(128, 128, 128, 0.5);
+  font-weight: 500;
+}
+.tabs input{
+  width:100%;
+}
+
+/* tabs */
+  input[type=text] {
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgba(220, 20, 60, 0.8);
+  background: url(assets/images/search-icon.png) no-repeat center left 5px;
+  background-size: 23px;
+  padding-left:35px ;
+  background-color:rgb(253, 253, 253);
+  margin-top: 20px;
+  }
+  input[type=text]::placeholder{
+    font-style:oblique;
+    transition: 0.3s;
+  }
+  input[type=text]:focus::placeholder{
+    opacity: 0;
+  }
+
+/* tabmenu */
+.btn{
+  list-style : none;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.btn li{
+  float: left;
+  font-weight: bold;
+  padding: 3px;
+  margin: auto;
+  text-align: center;
+  cursor: pointer;
+  border-top: 2px solid transparent;
+  width: 120px;
+  background-color: #eee;
+  border-right: 1px solid #ddd;
+}
+
+  .btn li:last-child {
+  border-right: none;
+  }
+
+  .btn li:hover,
+  .btn li.active {
+  background-color: #fff;
+  border-top: 2px solid crimson;
+  }
+
+/* tab content */
+.tabs{
+  border: 3px solid crimson;
+  width: 100%;
+}
+
+  .tabs div{
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+  background-color: #eee;
+  margin-top:0;
+  width: 100%;
+  }
+
+  .tabs div img{
+    width: 100%;
+  }
+
+  .tabs div.active{
+    display : block;
+  }
+
+  /*FAQ */
+.faq {
+  padding : 0;
+  margin : 0;
+  border: 3px solid crimson;
+  border-top: 0;
+  width: 100%;
+  font-size: 20px;
+  background-color: #eee;
+}
+.faq h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  padding: 20px 0 20px 0;
+}
+
+.faq-title{
+  background-color: rgb(175, 170, 170);
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 3px;
+  position: relative;
+}
+
+.faq-title::before{
+  content: '+';
+  position : absolute;
+  width: 20px;
+  height: 20px;
+  right: 20px;
+  top:11px;
+  transition: 0.5s;
+}
+
+.faq-title.active::before{
+  transform: rotate(45deg);
+}
+
+.faq-title:hover,
+.faq-title.active {
+  background-color: #34495e;
+  color : white;
+}
+
+.faq-content {
+  background-color: #34495e;
+  padding: 10px;
+  margin-bottom: 5px;
+  display: none;
+  color : white;
+}
+
+/* Checked Function */
+input[name=faq-item]:checked + label + .faq-content {
+  display: block;
+  max-height: 500px;
+  padding: 15px;
+}
+input[name=faq-item]:checked + label span {
+  transform: rotate(45deg);
+}
+
+  </style>
+</head>
+<body>
+  <!-- 탭메뉴, 어코디언 효과, input -->
+    <div class="tabs">
+      <input type="text" class="search" placeholder="What are you looking for?">
+      <ul class="btn">
+        <li data-alt="tab1" class="active">Lorem ipsum1</li>
+        <li data-alt="tab2">Lorem ipsum2</li>
+        <li data-alt="tab3">Lorem ipsum3</li>
+        <li data-alt="tab4">Lorem ipsum4</li>
+        <li data-alt="tab5">Lorem ipsum5</li>
+      </ul>
+      <div id="tab1" class="active">
+        <h2>Lorem ipsum1</h2>
+        <img src="assets/images/project-image-01.jpg">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consequatur nemo cum eos repellat recusandae ullam natus cupiditate laboriosam, aliquid nisi aperiam laborum illo ut omnis saepe quam eveniet voluptate, eaque voluptatum? Nobis, libero est. Deleniti perferendis minima modi cum, ut mollitia ipsam unde totam laboriosam fuga sapiente qui autem ipsa repellendus, quis harum, illo explicabo quidem aut officia eaque? Libero doloremque officiis eos. Illum quis architecto porro nemo facilis itaque alias, fugiat possimus debitis iure a? Laborum consequatur esse natus reprehenderit quae velit ex repellendus. Excepturi, pariatur ad, sequi voluptatum quaerat placeat sed assumenda repudiandae quibusdam perferendis eum illo.</p>
+      </div>
+      <div id=tab2>
+        <h2>Lorem ipsum2</h2>
+        <img src="assets/images/project-image-02.jpg">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consequatur nemo cum eos repellat recusandae ullam natus cupiditate laboriosam, aliquid nisi aperiam laborum illo ut omnis saepe quam eveniet voluptate, eaque voluptatum? Nobis, libero est. Deleniti perferendis minima modi cum, ut mollitia ipsam unde totam laboriosam fuga sapiente qui autem ipsa repellendus, quis harum, illo explicabo quidem aut officia eaque? Libero doloremque officiis eos. Illum quis architecto porro nemo facilis itaque alias, fugiat possimus debitis iure a? Laborum consequatur esse natus reprehenderit quae velit ex repellendus. Excepturi, pariatur ad, sequi voluptatum quaerat placeat sed assumenda repudiandae quibusdam perferendis eum illo.</p>
+      </div>
+      <div id=tab3>
+        <h2>Lorem ipsum3</h2>
+        <img src="assets/images/project-image-03.jpg">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consequatur nemo cum eos repellat recusandae ullam natus cupiditate laboriosam, aliquid nisi aperiam laborum illo ut omnis saepe quam eveniet voluptate, eaque voluptatum? Nobis, libero est. Deleniti perferendis minima modi cum, ut mollitia ipsam unde totam laboriosam fuga sapiente qui autem ipsa repellendus, quis harum, illo explicabo quidem aut officia eaque? Libero doloremque officiis eos. Illum quis architecto porro nemo facilis itaque alias, fugiat possimus debitis iure a? Laborum consequatur esse natus reprehenderit quae velit ex repellendus. Excepturi, pariatur ad, sequi voluptatum quaerat placeat sed assumenda repudiandae quibusdam perferendis eum illo.</p>
+      </div>
+      <div id=tab4>
+        <h2>Lorem ipsum4</h2>
+        <img src="assets/images/project-image-04.jpg">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consequatur nemo cum eos repellat recusandae ullam natus cupiditate laboriosam, aliquid nisi aperiam laborum illo ut omnis saepe quam eveniet voluptate, eaque voluptatum? Nobis, libero est. Deleniti perferendis minima modi cum, ut mollitia ipsam unde totam laboriosam fuga sapiente qui autem ipsa repellendus, quis harum, illo explicabo quidem aut officia eaque? Libero doloremque officiis eos. Illum quis architecto porro nemo facilis itaque alias, fugiat possimus debitis iure a? Laborum consequatur esse natus reprehenderit quae velit ex repellendus. Excepturi, pariatur ad, sequi voluptatum quaerat placeat sed assumenda repudiandae quibusdam perferendis eum illo.</p>
+      </div>
+      <div id=tab5>
+        <h2>Lorem ipsum5</h2>
+        <img src="assets/images/project-image-05.jpg">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consequatur nemo cum eos repellat recusandae ullam natus cupiditate laboriosam, aliquid nisi aperiam laborum illo ut omnis saepe quam eveniet voluptate, eaque voluptatum? Nobis, libero est. Deleniti perferendis minima modi cum, ut mollitia ipsam unde totam laboriosam fuga sapiente qui autem ipsa repellendus, quis harum, illo explicabo quidem aut officia eaque? Libero doloremque officiis eos. Illum quis architecto porro nemo facilis itaque alias, fugiat possimus debitis iure a? Laborum consequatur esse natus reprehenderit quae velit ex repellendus. Excepturi, pariatur ad, sequi voluptatum quaerat placeat sed assumenda repudiandae quibusdam perferendis eum illo.</p>
+      </div>
+    </div>
+    <section class="faq">
+        <h1>Frequently Asked Questions</h1>
+        <article class="accordion">
+          <div class="faq-title">A-Lorem ipsum</div>
+          <div class="faq-content">
+            A-Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </div>
+          
+          <div class="faq-title">B-Lorem ipsum</div>
+          <div class="faq-content">
+            B-Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </div>
+          
+          <div class="faq-title">C-Lorem ipsum</div>
+          <div class="faq-content">
+            C-Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </div>
+          
+          <div class="faq-title">D-Lorem ipsum</div>
+          <div class="faq-content">
+            D-Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </div>
+          
+          <div class="faq-title">E-Lorem ipsum</div>
+          <div class="faq-content">
+            E-Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </div>
+        </article>
+    </section>
+
+  <script>
+
+  $(".btn li").click(function() {
+    $(this).addClass('active')
+    $(this).siblings().removeClass('active')
+
+    var tab = $(this).attr('data-alt')
+    $('.tabs div').removeClass('active')
+    $('#' + tab).addClass('active')
+  })
+
+  $('.faq-content').eq(0).show()
+    $('.faq-title').eq(0).addClass('active')
+    $('.faq-title').click(function(){
+        $(this).addClass('active')
+        $(this).siblings().removeClass('active')
+        $(this).next().slideToggle()
+        $(this).siblings('.faq-title').next().slideUp()
+    })
+
+  </script>
+</body>
+</html>
