@@ -1,24 +1,41 @@
 import React from 'react';
 // import PropTypes from "prop-types";
+import axios from 'axios';
+import Movie from './Movie';
 
 class App extends React.Component {
-  state ={
-    count:0
+  state = {
+    isLoading: true,
+    movies_1 : []
   }
 
-  add = () => {
-    this.setState(current => ({count : current.count +1}));
+// render()하면 호출되는 life cycle method
+  getMovies = async () => {
+    const {data:{data:{movies}}} = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating")
+    // console.log(movies.data.data.movies)
+    console.log(movies)
+    // this.setState({movies_1:movies})
+    this.setState({movies, isLoading: false})
   }
-  minus = () => {
-    this.setState(current => ({count : current.count -1}));
+  componentDidMount() {
+    this.getMovies()
   }
 
   render() {
+    const {isLoading, movies} = this.state
     return (
     <div>
-      <h1>The number is {this.state.count}</h1>
-      <button onClick={this.add}>add</button>
-      <button onClick={this.minus}>minus</button>
+      {isLoading ? "Loading" :
+      movies.map(movie=>(
+        <Movie
+          key={movie.id}
+          id={movie.id}
+          year={movie.year}
+          title={movie.title}
+          summary={movie.summary}
+          poster={movie.medium_cover_image}
+        />
+      ))}
     </div>)
   }
 }

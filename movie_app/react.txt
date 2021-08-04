@@ -12,3 +12,9 @@ state를 set할 때 react에서 외부의 상태에 의존하지 않는 좋은
 방법
  : this.setState({count : this.state.count -1}) (X) 
   -> this.setState(current => ({count : current.count -1}));
+Component lifr cycle
+ : mounting / updateing / unmounting
+
+https://yts-proxy.now.sh/list_movies.json
+
+application은 render 실행
