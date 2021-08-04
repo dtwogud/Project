@@ -1,0 +1,14 @@
+jsx
+prototypes
+
+state(object)
+ : React.Component 들 중 state
+ : component를 만들 때 마다 모든 것을 구현하지않기 위해
+extend 실행
+class react component는 return X(function이 아니기에..)
+ -> render method를 가지고있음
+react는 자동적으로 class component의 render method실행
+state를 set할 때 react에서 외부의 상태에 의존하지 않는 좋은 
+방법
+ : this.setState({count : this.state.count -1}) (X) 
+  -> this.setState(current => ({count : current.count -1}));
