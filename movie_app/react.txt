@@ -20,3 +20,6 @@ https://yts-proxy.now.sh/list_movies.json
 application은 render 실행
 
 npm i gh-pages
+
+react hook -> state를 위해 class component 제작필요성 ↓
+react native application
