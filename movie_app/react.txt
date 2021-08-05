@@ -18,3 +18,5 @@ Component lifr cycle
 https://yts-proxy.now.sh/list_movies.json
 
 application은 render 실행
+
+npm i gh-pages
