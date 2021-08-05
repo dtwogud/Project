@@ -23,3 +23,5 @@ npm i gh-pages
 
 react hook -> state를 위해 class component 제작필요성 ↓
 react native application
+
+react router dom => npm install react-router-dom
